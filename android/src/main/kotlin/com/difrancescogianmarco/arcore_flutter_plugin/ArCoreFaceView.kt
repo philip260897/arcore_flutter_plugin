@@ -10,6 +10,7 @@ import com.google.ar.core.AugmentedFace
 import com.google.ar.core.Config
 import com.google.ar.core.TrackingState
 import com.google.ar.core.exceptions.CameraNotAvailableException
+import com.difrancescogianmarco.arcore_flutter_plugin.flutter_models.FlutterArCorePose
 import com.google.ar.core.exceptions.UnavailableException
 import com.google.ar.sceneform.ArSceneView
 import com.google.ar.sceneform.Scene

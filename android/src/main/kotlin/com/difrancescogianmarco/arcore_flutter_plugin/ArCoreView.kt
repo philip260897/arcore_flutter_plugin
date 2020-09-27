@@ -90,14 +90,14 @@ class ArCoreView(val activity: Activity, context: Context, messenger: BinaryMess
 
         faceSceneUpdateListener = Scene.OnUpdateListener { frameTime ->
             run {
-                Log.i(TAG, "FaceSceneUpdate 1")
+
                 //                if (faceRegionsRenderable == null || faceMeshTexture == null) {
                 if (faceMeshTexture == null) {
                     return@OnUpdateListener
                 }
 
                 val faceList = arSceneView?.session?.getAllTrackables(AugmentedFace::class.java)
-                Log.i(TAG, "FaceSceneUpdate 2")
+
                 faceList?.let {
                     // Make new AugmentedFaceNodes for any new faces.
                     for (face in faceList) {
@@ -109,7 +109,7 @@ class ArCoreView(val activity: Activity, context: Context, messenger: BinaryMess
                             faceNodeMap[face] = faceNode
                         }
 
-                        Log.i(TAG, "FaceSceneUpdate 3")
+
                         //if(face.trackingState == TrackingState.TRACKING) {
 
                         //}
