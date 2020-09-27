@@ -43,7 +43,7 @@ class ArCoreFaceController {
           onError(call.arguments);
         }
         break;
-      case 'onPlaneDetected':
+      case 'onFaceUpdated':
         if (onFaceUpdate != null) {
           final plane = ArAugmentedFace.fromMap(call.arguments);
           onFaceUpdate(plane);
