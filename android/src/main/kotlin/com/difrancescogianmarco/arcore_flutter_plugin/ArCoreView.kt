@@ -108,7 +108,7 @@ class ArCoreView(val activity: Activity, context: Context, messenger: BinaryMess
                             faceNodeMap[face] = faceNode
                         }
 
-                        if(face.trackingState == TrackingState.TRACKING) {
+                        //if(face.trackingState == TrackingState.TRACKING) {
                             val pose = face.centerPose
                             val map: HashMap<String, Any> = HashMap<String, Any>()
                             //map["type"] = plane.type.ordinal
@@ -116,7 +116,7 @@ class ArCoreView(val activity: Activity, context: Context, messenger: BinaryMess
                             //map["extentX"] = plane.extentX
                             //map["extentZ"] = plane.extentZ
                             methodChannel.invokeMethod("onFaceUpdated", map)
-                        }
+                        //}
                     }
 
                     // Remove any AugmentedFaceNodes associated with an AugmentedFace that stopped tracking.
