@@ -111,13 +111,7 @@ class ArCoreView(val activity: Activity, context: Context, messenger: BinaryMess
 
                         Log.i(TAG, "FaceSceneUpdate 3")
                         //if(face.trackingState == TrackingState.TRACKING) {
-                            val pose = face.centerPose
-                            val map: HashMap<String, Any> = HashMap<String, Any>()
-                            //map["type"] = plane.type.ordinal
-                            map["centerPose"] = FlutterArCorePose(pose.translation, pose.rotationQuaternion).toHashMap()
-                            //map["extentX"] = plane.extentX
-                            //map["extentZ"] = plane.extentZ
-                            methodChannel.invokeMethod("onFaceUpdated", map)
+
                         //}
                     }
 
