@@ -5,7 +5,12 @@ import 'package:flutter/services.dart';
 
 import '../arcore_flutter_plugin.dart';
 
+typedef ArCoreFaceHandler = void Function(ArAugmentedFace face);
+
 class ArCoreFaceController {
+
+
+  
   ArCoreFaceController({
     int id,
     this.enableAugmentedFaces,
@@ -18,6 +23,7 @@ class ArCoreFaceController {
   final bool enableAugmentedFaces;
   MethodChannel _channel;
   StringResultHandler onError;
+  ArCoreFaceHandler onFaceUpdate;
 
   init() async {
     try {
@@ -35,6 +41,12 @@ class ArCoreFaceController {
       case 'onError':
         if (onError != null) {
           onError(call.arguments);
+        }
+        break;
+      case 'onPlaneDetected':
+        if (onFaceUpdate != null) {
+          final plane = ArAugmentedFace.fromMap(call.arguments);
+          onFaceUpdate(plane);
         }
         break;
       default:
