@@ -122,7 +122,7 @@ class ArCoreView(val activity: Activity, context: Context, messenger: BinaryMess
                     }
                 }
 
-                for(AugmentedFace face in faceList) {
+                for(face in faceList) {
                     if(face.trackingState == TrackingState.TRACKING) {
                         val pose = face.centerPose
                         val map: HashMap<String, Any> = HashMap<String, Any>()
